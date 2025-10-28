@@ -50,6 +50,10 @@
         <source>report_customer_monthly_projects</source>
         <target>Projects by month, activity and user</target>
       </trans-unit>
+      <trans-unit id="user_activity_sum" resname="user_activity_sum">
+        <source>user_activity_sum</source>
+        <target>User activity summary</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
