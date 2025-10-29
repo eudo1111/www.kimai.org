@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Waldorfschule Heilbronn – Kimai</title>
+<meta name="description" content="Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat">
+<link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kimai Time-Tracking">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/stories/waldorfschule-heilbronn">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/stories/waldorfschule-heilbronn">
+<link href="/assets/build/main.css?v6" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/en/changelog" class="dropdown-item">Änderungen</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/de/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Anmelden</a>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    <section class="container pt-4 pb-2 mb-lg-5">
+
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="/de/"><i class="bx bx-home-alt fs-lg me-1"></i>Startseite</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/de/stories/">Erfolgsgeschichten</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Waldorfschule Heilbronn</li>
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url(/images/stories/waldorfcampus-unterricht.webp); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
+            </div>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="/de/"><i class="bx bx-home-alt fs-lg me-1"></i>Startseite</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/de/stories/">Erfolgsgeschichten</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Waldorfschule Heilbronn</li>
+                    </ol>
+                </nav>
+
+                <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
+                        <h1 class="pb-2 pb-xxl-3"><i>Keine Excel-Tabellen, sondern ein funktionierendes System</i></h1>
+                        <div class="pb-2 mb-4 mb-xxl-5">
+                            Unternehmen: <strong>Verein für Waldorfpädagogik Unterland e.V.</strong>
+                            <br>
+                            Geschäftsführer &amp; Schulleiter: <strong>Jörg Hartmann</strong>
+                            <br>
+                            Branche: <strong>Bildung</strong>
+                            <br>
+                            Mitarbeiter: <strong>100+</strong>
+                            <br>
+                            Nutzt Kimai seit: <strong>2023</strong>
+                            <br>
+                            Homepage: <strong><a href="/de/stories/waldorfschule-heilbronn" target="_blank">www.waldorfschule-hn.de</a></strong>
+                            <br>
+                            Standort: <strong>Heilbronn, Deutschland</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-md-9 pe-lg-5">
+                <h2 class="h2 pb-4 mb-1 mb-lg-3">Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat</h2>
+                <p><strong>Die Zahlen des Unternehmens</strong></p>
+
+<ul>
+  <li>150 Mitarbeiter – fast 40 Lehrer, über 40 Erzieher sowie Reinigungspersonal, Haustechnik, Auszubildende und mehr</li>
+  <li>380–400 Schüler in der Schule, 130–140 Kinder in den Kindertagesstätten</li>
+</ul>
+
+<p><strong>Beschreibung der Organisation</strong></p>
+
+<p>Die Waldorfschule Heilbronn ist eine freie, gemeinnützige Bildungseinrichtung, die Schule und Kindertagesstätte unter einem Dach vereint.
+Als freier Bildungsträger steht sie allen Kindern offen – unabhängig von Nationalität, Religion oder Herkunft – und bereitet sie auf staatlich anerkannte Abschlüsse vor. 
+Eltern, Lehrkräfte und Erzieher arbeiten in Selbstverwaltung zusammen und tragen gemeinsam Verantwortung.
+Waldorfschule Heilbronn eine innovative Bildungsinstitution mit über 40-jähriger Tradition und dem Ziel, eine lebenswerte Welt und menschenwürdige Gesellschaft zu gestalten.</p>
+
+<p><strong>Der Lehrer, der Zeit in Vertrauen verwandelte</strong></p>
+
+<p>Jörg Hartmann, ein Mann, der seinen Weg „<em>ganz klassisch in der Rolle des Pädagogen</em>” begann, leitet heute eine innovative Bildungseinrichtung – die Waldorfschule Heilbronn. 
+Als Geschäftsführer des Trägervereins der Waldorfschule trägt Hartmann die Verantwortung für ein beeindruckendes Bildungsökosystem, das vom Kleinkindalter bis zum Abitur reicht.
+„<em>Wir haben hier Kinder von 0 bis 19 – sie kommen in die Krippe, werden hier betreut, besuchen den Kindergarten, gehen dann mit sechs oder sieben Jahren in die Schule und machen idealerweise hier ihr Abitur</em>.”</p>
+
+
+            </div>
+            <div class="col-md-3 pb-2 pb-md-0 mb-4 mb-md-0">
+                <div class="card card-body border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></span>
+                    <div class="position-relative zindex-2">
+                        <h3 class="h5">Einsparungen mit Kimai</h3>
+                        <ul class="ps-4 mb-0">
+                            
+                            <li class="pb-3 mb-1">100+ Stunden Zeitersparnis jeden Monat durch schnelle Zeiterfassungsfunktion</li>
+                            
+                            <li class="pb-3 mb-1">60% Entlastung für die Buchhaltungsabteilung dank der Reporting-Funktion</li>
+                            
+                            <li class="pb-3 mb-1">Reduzierung der Überstunden</li>
+                            
+                            <li class="pb-3 mb-1">Ausgewogene Arbeitsbelastung unter den Lehrern</li>
+                            
+                            <li class="pb-3 mb-1">Kostenersparnisse von mehreren Tausend Euro durch fixe Open-Source-Lösung</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary py-5">
+    <div class="container py-2 py-md-4 py-lg-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="position-relative d-flex h-100">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-center" style="background-image: url(/images/stories/waldorfcampus-hartmann.webp);"></div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <figure class="card position-relative border-0 shadow-sm py-3 p-0 p-lg-4 mt-4 mb-0 ms-xl-5">
+                <span class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-lg-5">
+                  <i class="bx bxs-quote-left"></i>
+                </span>
+                    <div class="card-body mt-2 mb-0">
+                        <p class="fs-lg">Jörg Hartmann fing seine Karriere als Lehrer an und ist aktuell Geschäftsführer des Vereins für Waldorfpädagogik.</p>
+                    </div>
+                    <figcaption class="card-footer border-0 d-sm-flex pt-0 mt-n3 mt-lg-0">
+                        <div class="d-flex align-items-center border-end-sm pe-sm-4 me-sm-4">
+                            <img src="/images/stories/waldorfcampus-hartmann.webp" width="48" class="d-md-none rounded-circle" alt="Jörg Hartmann">
+                            <div class="ps-3 ps-md-0">
+                                <h5 class="fw-semibold lh-base mb-0">Jörg Hartmann</h5>
+                                <span class="fs-sm text-muted">Geschäftsführer &amp; Schulleiter</span>
+                            </div>
+                        </div>
+                        <img src="/images/stories/waldorfcampus-heilbronn.svg" width="160" class="d-block mt-2 ms-5 mt-sm-0 ms-sm-0" alt="Verein für Waldorfpädagogik Unterland e.V.">
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                
+
+<p><strong>Das Excel-Chaos, das nicht funktionierte</strong></p>
+
+<p>Vor Kimai stand der Waldorf-Campus vor einem Problem, das viele Bildungseinrichtungen weltweit kennen: ein Zeiterfassungssystem, das nur auf dem Papier existierte.
+„<em>Es gab irgendwelche Excel-Listen, die theoretisch ausgefüllt werden sollten, aber niemand hatte wirklich einen Überblick darüber</em>,” erinnert sich Jörg Hartmann.</p>
+
+<p>Die Erfahrungen von Jörg Hartmann in anderen Organisationen zeigten ihm, was nach Verbesserung verlangt: 
+„<em>Top-down-Zeiterfassungssysteme, bei denen ich als Mitarbeiter wirklich nur stempeln konnte, aber keine Einsicht hatte und auch nichts selbst ändern konnte</em>.” 
+Für eine nach Gemeinschaft und Vertrauen lebende Waldorfschule war ein solches System inakzeptabel.</p>
+
+<div class="alert alert-success d-flex" role="alert">
+<p>Die Open-Source-Lösung ermöglichte erhebliche Verbesserungen durch eine bequeme und transparente Arbeitszeiterfassung, ohne große Kosten zu verursachen. 
+Besonders die Möglichkeit, schnell Einträge über Handy oder spezielle Zeiterfassungsterminals zu machen, fand hohe Akzeptanz im Kollegium. 
+Bei administrativen Aufgaben profitierte die Organisation von enormen Zeit- und Kostenersparnissen durch die effiziente Erfassung, Verwaltung, Auswertung und Abrechnung von Arbeitszeiten mit Kimai.</p>
+</div>
+
+<p><strong>Der Weg von Auswahl zu Implementierung</strong></p>
+
+<p>„<em>Jede andere Lösung war einfach brutal teuer</em>”, erklärt Jörg Hartmann, warum aus allen Angeboten genau Kimai gewählt wurde.
+Während andere Anbieter pro Mitarbeiter abrechneten, bot Kimai als Open-Source-Lösung einen entscheidenden Vorteil: 
+„<em>Man muss es nur einmal installieren und kann es dann mit beliebig vielen Mitarbeitern dauerhaft betreiben</em>. <em>Die Kosten laufen für den kompletten Server.</em>”</p>
+
+<p>Die Einführung verlief nicht ohne Widerstand. 
+„<em>Es gab tatsächlich viel Gegenwind aus dem Lehrerkollegium</em>”, gibt Jörg Hartmann offen zu, „<em>viele hingen an ihren halb ausgefüllten Excel-Tabellen</em>.” 
+Die Akzeptanz war zudem unterschiedlich: Während Büroangestellte und Erzieher das System relativ schnell annahmen, blieben die Lehrer zurückhaltender. 
+„<em>Bei Lehrern ist Zeiterfassung noch sehr verhalten – teilweise wird sie gar nicht genutzt</em>”, räumt der Geschäftsführer ein.</p>
+
+<p>Doch seine Strategie basierte auf Vertrauen: „<em>Jeder Mitarbeiter soll sich in sein Zeiterfassungssystem einloggen und auch Änderungen selbst vornehmen können</em>.”</p>
+
+<p><strong>Die vertrauensbasierte Umsetzungsstrategie</strong></p>
+
+<p>Statt die Einführung mit Zwang durchzusetzen, setzte Jörg auf Kommunikation und praktische Demonstration: 
+„<em>Es gab eine Sitzung im Kollegium mit allen Erzieherinnen und Lehrern, bei der ich Kimai per Beamer vorgestellt habe</em>.”</p>
+
+<p>Der Durchbruch kam durch die praktische Erfahrung: 
+„<em>Als dem Kollegium klar wurde, dass das Eintragen der Zeiten genauso einfach oder sogar einfacher ist als in den Excel-Tabellen und dass sie das von überall aus erledigen können – vom Handy oder über Zeiterfassungsterminals – änderte sich die Haltung nach und nach</em>.”</p>
+
+<p>Ein besonderes Highlight war die kreative Lösung des IT-Administrators, der maßgeschneiderte Zeiterfassungsterminals entwickelte. 
+„<em>Er hat kleine Holzkästchen genommen, einen Raspberry Pi und einen Touchscreen eingebaut – jetzt läuft Kimai im <a href="/de/store/keleo-kiosk-barcode-bundle.html">Kiosk-Modus</a></em>”, erklärt Jörg Hartmann.</p>
+
+<p>Mittlerweile hängen etwa zehn solcher Geräte auf dem gesamten Campus. 
+Der Kioskmodus erwies sich als entscheidender Erfolgsfaktor: 
+„<em>Das ist für die Mitarbeitenden einfach zu bedienen und trotzdem haben sie genug Autonomie, um eigene Arbeitszeiten und sogar Homeoffice-Einträge vorzunehmen</em>.”</p>
+
+<p>Durch die Souveränität und Zuverlässigkeit von Kimai wächst das Vertrauen vom Kollegium in das System.</p>
+
+<p><strong>Die wahren Gewinner</strong></p>
+
+<p>Während einzelne Mitarbeiter etwa 15 bis 20 Minuten pro Woche sparen, liegen die größten Vorteile bei den Leitungsteams. 
+Hartmann beschreibt anschaulich die Situation seiner Vorgängerin: 
+„<em>Sie saß sicher zwei bis drei volle Tage pro Kita-Jahr mit diesen Excel-Tabellen – stundenlanges Copy &amp; Paste bei 50 oder 60 Mitarbeitern</em>.”</p>
+
+<p>Der Unterschied ist enorm: 
+„<em>Heute, wenn ich die Stundenabrechnung brauche, klicke ich einfach auf den Namen – und habe die Daten sofort</em>.”</p>
+
+<p>Auch für ihn als Geschäftsführer hat sich der Arbeitsalltag stark vereinfacht: 
+„<em>Früher gab es Papierlisten für Stundenkräfte, die ausgegeben, per Hand ausgefüllt und zurückgegeben wurden. Heute sehe ich die Liste im System, die geleisteten Stunden sind sofort einsehbar – und die vorbereitende Lohnbuchhaltung ist in wenigen Minuten erledigt</em>.”</p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row w-lg-50 w-md-75 w-100 m-auto pb-xl-3">
+            <div class="col">
+                <div class="card position-relative border-0 shadow-sm pt-4">
+                    <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                      <i class="bx bxs-quote-left"></i>
+                    </span>
+                    <div class="card-body pb-3 mb-0">
+                        <p class="mb-0"></p>
+<p>„<em>Je länger wir Kimai nutzen, desto zufriedener ist das Kollegium</em>“, zieht Hartmann eine positive Bilanz. „<em>Kimai läuft einfach stabil und ohne Probleme</em>.“</p>
+
+                        <div class="d-flex align-items-center pt-4">
+                            <img src="/images/stories/waldorfcampus-hartmann.webp" width="58" class="rounded-circle" alt="Jörg Hartmann">
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Jörg Hartmann</h6>
+                                <span class="fs-xs text-muted">Geschäftsführer &amp; Schulleiter – Verein für Waldorfpädagogik Unterland e.V.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                
+
+<p><strong>Der Ausblick</strong></p>
+
+<p>Das System ist mittlerweile so fest in den Arbeitsalltag integriert, dass man sich schwer vorstellen kann, wie man ohne es arbeiten sollte. 
+Der anfängliche Widerstand hat sich in Wertschätzung verwandelt – besonders da die Mitarbeitenden die Transparenz und Kontrolle des vertrauensvollen Systems sehr schätzen.</p>
+
+<p>JörgnHartmanns wichtigster Rat: 
+„<em>Man sollte vorher eine gute Struktur planen. Wir hätten uns klarer überlegen sollen, welche Tätigkeiten im System auswählbar sein sollen, um später präzise Auswertungen zu ermöglichen</em>.”</p>
+
+<p>Die Geschichte der Waldorfschule Heilbronn zeigt, wie moderne Bildungsorganisationen Balance finden können, wenn administrativer Druck wächst, ohne dass die pädagogische Mission in den Hintergrund tritt. 
+Mit der vertrauensbasierten Einführung einer Open-Source-Lösung hat der Waldorf-Campus bewiesen: Effizienz und Gemeinschaftswerte ergänzen und stärken sich gegenseitig.</p>
+
+<p>Für Führungskräfte, die ihre Teams im Excel-Chaos versinken sehen, bietet Jörg Hartmanns Weg eine hoffnungsvolle Botschaft:</p>
+
+<p>„<em>Mit dem richtigen Ansatz können auch skeptische Gemeinschaften eine befreiende Digitalisierung willkommen heißen</em>.”</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+        </div>
+    </div>
+</section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Deutsch
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/kimai-rabatt-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Zeiterfassungsbegriffe</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time tracking for successful freelancers">Freelancer</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/zeiterfassung-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Gemeinnützige Organisationen</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Kimai Alternativen</a>
+                                </li>
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

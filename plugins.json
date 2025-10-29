@@ -63,7 +63,7 @@
             "homepage": "https://www.kevinpapst.de"
         },
         "minimum_version": "2.0.33",
-        "latest_release": "2.14.1",
+        "latest_release": "2.15.1",
         "bundle": "AuditTrailBundle",
         "icon": "fas fa-history",
         "description": "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline.",
@@ -281,7 +281,7 @@
             "homepage": "https://www.kevinpapst.de"
         },
         "minimum_version": "2.0.33",
-        "latest_release": "2.22.0",
+        "latest_release": "2.23.0",
         "bundle": "ExpensesBundle",
         "icon": "fas fa-money-check",
         "description": "Keep track of your expenses based on customer and project. These expenses can be categorized and included in your invoices.",
@@ -339,7 +339,7 @@
             "homepage": "https://www.kevinpapst.de"
         },
         "minimum_version": "2.0.30",
-        "latest_release": "2.21.0",
+        "latest_release": "2.22.0",
         "bundle": "ImportBundle",
         "icon": "fas fa-file-import",
         "description": "Allows importing CSV files through an administration screen.",
@@ -354,7 +354,7 @@
             "homepage": "https://www.kevinpapst.de"
         },
         "minimum_version": "2.0.0",
-        "latest_release": "2.2.0",
+        "latest_release": "2.3.0",
         "bundle": "InvoiceBundle",
         "icon": "fas fa-file-invoice-dollar",
         "description": "Enhanced invoicing features. Change locale for money and date values, automatic timesheet-proof PDF for new invoices.",
@@ -389,6 +389,20 @@
         "description": "Desktop client for macOS, Windows, and Linux to track time from your menu bar.",
         "new": false,
         "price": "10 €"
+    },
+    {"name": "KimaiClock",
+        "url": "https://www.kimai.org/store/foraum-kimai-clock.html",
+        "developer": {
+            "name": "Foraum GmbH",
+            "homepage": "https://foraum.de"
+        },
+        "minimum_version": null,
+        "latest_release": null,
+        "bundle": null,
+        "icon": "fas fa-clock",
+        "description": "macOS menu bar app to track time with Kimai",
+        "new": false,
+        "price": "0"
     },
     {"name": "Kimai Mobile (Android)",
         "url": "https://www.kimai.org/store/cloudrizon-kimai-mobile-app-android.html",
@@ -441,7 +455,7 @@
             "homepage": "https://www.kevinpapst.de"
         },
         "minimum_version": "2.0.29",
-        "latest_release": "2.15.0",
+        "latest_release": "2.16.1",
         "bundle": "KioskBundle",
         "icon": "fas fa-barcode",
         "description": "Attendance time-tracking in an environment, where the user has no access to Kimai (e.g. in a warehouse), by using a barcode or RFID scanner to start and stop timesheets.",
@@ -498,7 +512,7 @@
             "homepage": null
         },
         "minimum_version": "2.1.0",
-        "latest_release": "1.7.0",
+        "latest_release": "1.8.0",
         "bundle": "PeriodInsertBundle",
         "icon": "fas fa-clone",
         "description": "Generate entries for a given time period.",
@@ -614,7 +628,7 @@
             "homepage": "https://www.kevinpapst.de"
         },
         "minimum_version": "2.0.34",
-        "latest_release": "1.25.0",
+        "latest_release": "1.27.0",
         "bundle": "WorkContractBundle",
         "icon": "fas fa-gavel",
         "description": "Employee management: Working hours & overtime. Vacations, sickness and PTO. Public holiday management and calendar integration. Monthly approvals with PDF.",
