@@ -95,8 +95,15 @@ final class UserActivitySumController extends AbstractUserReportController
             $grouped = $statisticService->getDailyStatisticsGrouped($start, $end, $allUsers);
 
             // Build activity -> user -> totals (duration/rates) across the month
+            $selectedProjectId = null;
+            if ($values->getProject() !== null) {
+                $selectedProjectId = (string) $values->getProject()->getId();
+            }
             foreach ($grouped as $uid => $projects) {
                 foreach ($projects as $projectData) {
+                    if ($selectedProjectId !== null && (string) $projectData['project'] !== $selectedProjectId) {
+                        continue;
+                    }
                     foreach ($projectData['activities'] as $aid => $activityData) {
                         if (!isset($activityTotals[$aid])) {
                             $activityTotals[$aid] = ['activity' => $aid, 'perUser' => [], 'duration' => 0, 'rate' => 0.0, 'internalRate' => 0.0];
@@ -136,13 +143,28 @@ final class UserActivitySumController extends AbstractUserReportController
             }
         }
 
+        // Reduce users to only those that have any reported time for the selection
+        $userIdsWithData = [];
+        foreach ($activityTotals as $totals) {
+            foreach (array_keys($totals['perUser']) as $uid) {
+                $userIdsWithData[$uid] = true;
+            }
+        }
+        $usersWithData = [];
+        foreach ($userIdsWithData as $uid => $_) {
+            if (isset($usersById[$uid])) {
+                $usersWithData[] = $usersById[$uid];
+            }
+        }
+
+
         return [
             'report_title' => 'user_activity_sum',
             'export_route' => 'user_activity_sum_export',
             'form' => $form->createView(),
             'date' => $start,
             'sumType' => $values->getSumType(),
-            'users' => $allUsers,
+            'users' => $usersWithData,
             'usersById' => $usersById,
             'activities' => $activities,
             'activityTotals' => $activityTotals,

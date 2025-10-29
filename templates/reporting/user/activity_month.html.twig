@@ -1,4 +1,5 @@
 {% extends 'reporting/layout.html.twig' %}
+{% import "macros/widgets.html.twig" as widgets %}
 
 {% block report_form_layout %}
     {{ form_widget(form.date) }}
@@ -13,18 +14,23 @@
     {% embed '@theme/embeds/card.html.twig' with {box_id: 'user-activity-sum-by-month', hasData: hasData, fullsize: hasData, users: users, activities: activities, activityTotals: activityTotals, sumType: sumType, decimal: decimal} only %}
         {% block box_body_class %}table-responsive m-0{% endblock %}
         {% block box_body %}
+            {% import "macros/widgets.html.twig" as widgets %}
             {% if not hasData %}
                 {% from 'macros/widgets.html.twig' import nothing_found %}
                 {{ nothing_found() }}
             {% else %}
+                {% set dataTypeTitle = sumType == 'rate' ? 'stats.amountTotal' : (sumType == 'internalRate' ? 'internalRate' : 'stats.durationTotal') %}
                 <table class="table table-hover dataTable">
                     <thead>
                         <tr>
-                            <th>{{ 'user'|trans }}</th>
+                            <th class="w-avatar"></th>
+                            <th class="text-nowrap">&nbsp;</th>
+                            <th class="text-center reportDataTypeTitle">{{ dataTypeTitle|trans }}</th>
                             {% for aid, totals in activityTotals|sort((a,b) => (activities[a.activity].name|default('')|lower) <=> (activities[b.activity].name|default('')|lower)) %}
-                                <th class="text-center">{{ activities[aid].name|default(aid) }}</th>
+                                <th class="text-center">
+                                    <a href="{{ path('activity_details', {'id': aid}) }}">{{ widgets.label_activity(activities[aid]|default({'name': aid})) }}</a>
+                                </th>
                             {% endfor %}
-                            <th class="text-center">{{ 'sum.total'|trans }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,16 +38,33 @@
                             {% set userTotalDuration = 0 %}
                             {% set userTotalRate = 0 %}
                             {% set userTotalInternal = 0 %}
-                            <tr>
+                            {# pre-calculate totals for this user before rendering the total column #}
+                            {% for aid, totals in activityTotals|sort((a,b) => (activities[a.activity].name|default('')|lower) <=> (activities[b.activity].name|default('')|lower)) %}
+                                {% set ukey = user.id ~ '' %}
+                                {% set cell = totals.perUser[ukey]|default(null) %}
+                                {% if cell %}
+                                    {% set userTotalDuration = userTotalDuration + (cell.duration|default(0)) %}
+                                    {% set userTotalRate = userTotalRate + (cell.rate|default(0)) %}
+                                    {% set userTotalInternal = userTotalInternal + (cell.internalRate|default(0)) %}
+                                {% endif %}
+                            {% endfor %}
+                            <tr class="user">
+                                <td class="w-avatar">{{ widgets.user_avatar(user) }}</td>
                                 <th class="text-nowrap">{{ user.displayName }}</th>
+                                <td class="text-nowrap text-center total">
+                                    {% if sumType == 'rate' %}
+                                        {{ userTotalRate|money }}
+                                    {% elseif sumType == 'internalRate' %}
+                                        {{ userTotalInternal|money }}
+                                    {% else %}
+                                        {{ userTotalDuration|duration(decimal) }}
+                                    {% endif %}
+                                </td>
                                 {% for aid, totals in activityTotals|sort((a,b) => (activities[a.activity].name|default('')|lower) <=> (activities[b.activity].name|default('')|lower)) %}
                                     {% set ukey = user.id ~ '' %}
                                     {% set cell = totals.perUser[ukey]|default(null) %}
-                                    <td class="text-center text-nowrap">
+                                    <td class="text-center text-nowrap day-total">
                                         {% if cell %}
-                                            {% set userTotalDuration = userTotalDuration + (cell.duration|default(0)) %}
-                                            {% set userTotalRate = userTotalRate + (cell.rate|default(0)) %}
-                                            {% set userTotalInternal = userTotalInternal + (cell.internalRate|default(0)) %}
                                             {% if sumType == 'rate' %}
                                                 {{ cell.rate|money }}
                                             {% elseif sumType == 'internalRate' %}
@@ -52,15 +75,6 @@
                                         {% endif %}
                                     </td>
                                 {% endfor %}
-                                <th class="text-center text-nowrap">
-                                    {% if sumType == 'rate' %}
-                                        {{ userTotalRate|money }}
-                                    {% elseif sumType == 'internalRate' %}
-                                        {{ userTotalInternal|money }}
-                                    {% else %}
-                                        {{ userTotalDuration|duration(decimal) }}
-                                    {% endif %}
-                                </th>
                             </tr>
                         {% endfor %}
                     </tbody>
